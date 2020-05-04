@@ -11,11 +11,18 @@ To create layout and represent our content in a more beautiful way CSS provide u
 Usually to create outline for any section or division we will be working with block-level elements. And the block-level element always start from a new line taking whole available width, that we know from the previous chapter. One of the approach we can take to make block-level elements line up one after another, is overwrite it's display property value to `inline-block`. We have already seen how to work with inline-block level elements.
 
 ```
+  <!-- HTML -->
   <header>..........</header>
   <aside>.........</aside><!--
   --><section>.........</section>
   <footer>............</footer>
 
+  <!-- CSS -->
+  header, aside, section, footer {
+    background: green;
+    padding: 50px;
+    box-sizing: border-box;
+  }
   section, aside {
     display: inline-block;
     margin: 0 1.5%;
@@ -74,13 +81,16 @@ Nowadays we have some other specifications like `Flexbox and CSS-Grid` which hav
 Let's create the similar layout that we made above with inline-block positioning. But this time with float. We have header at the top, aside and section in center and the footer at the bottom.
 
 ```
+  <!-- HTML -->
   <header>..........</header>
   <aside>.........</aside>
   <section>.........</section>
   <footer>............</footer>
 
-  header, aside, section {
-    padding: 30px;
+  <!-- CSS -->
+  header, aside, section, footer {
+    padding: 50px;
+    box-sizing: border-box;
   }
   aside {
     float: left;
@@ -99,22 +109,27 @@ According to above the discussion the aside and section element are out of the n
 As all upcoming element will flow around the floated element, that's why the footer is in gutter between the aside and section. To get rid of this we can apply `clear: both` on footer. The `clear` property, we will cover soon in the next section.
 
 ```
+  <!-- HTML -->
   <header>..........</header>
   <aside>.........</aside>
   <section>.........</section>
   <footer>............</footer>
 
-  header, aside, section {
-    padding: 30px;
-    margin: 0 1.5%;
+  <!-- CSS -->
+  header, aside, section, footer {
+    padding: 50px;
+    background: green;
+    box-sizing: border-box;
   }
   aside {
     float: left;
     width: 30%;
+    margin: 32px 1.5%;
   }
   section {
     float: right;
     width: 63%;
+    margin: 32px 1.5%;
   }
   footer {
     clear: both;

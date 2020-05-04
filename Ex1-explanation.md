@@ -21,7 +21,6 @@ Usually to create outline for any section or division we will be working with bl
     margin: 0 1.5%;
   }
   aside {
-    margin: 0 1.5%;
     width: 30%;
   }
   section {
@@ -65,3 +64,87 @@ The float comes with three different values: `left, right, and none`. Left and r
 ![Float Basic Example](https://raw.githubusercontent.com/suraj122/AC-STYLE-images/master/positioning-content/float-image.png)
 
 Here in the above example the image is floated left. Therfore the paragrphs(upcoming element) are are wrapping around the image as necessary.
+
+The float property is pretty versatile. Applying it on multiple element at the same time, allows element to come to or opposite each other. Multiple column layout can be created easily with floats. From here we can start giving the real website like structure to our layout.
+
+Nowadays we have some other specifications like `Flexbox and CSS-Grid` which have been introduced recently. These new specifications have almost replaced the float based layouts. In modern websites, you'll find such specifications has been used to style the layouts. But still, we will cover the floats, because this is the foundation which has been used in the majority of the websites.
+
+#### Use of Floats
+
+Let's create the similar layout that we made above with inline-block positioning. But this time with float. We have header at the top, aside and section in center and the footer at the bottom.
+
+```
+  <header>..........</header>
+  <aside>.........</aside>
+  <section>.........</section>
+  <footer>............</footer>
+
+  header, aside, section {
+    padding: 30px;
+  }
+  aside {
+    float: left;
+  }
+  section {
+    float: right;
+  }
+```
+
+If you experiment above code, you will get header at the top, but few things you will find which may not be friendly. The aside and section, being a block-level element, instead of stacking on top of each other, they are sitting opposite to each other. Also the aside and section element instead of taking whole availabe width, is covering the space according tot the content it wraps or the amount of padding it has.
+
+You will also find the footer is sitting in between the aside and section element.
+
+According to above the discussion the aside and section element are out of the normal flow of the page. They are positioned to the left and right side of the page, opposite to each other. The float property causes the element to take space according to the content. However, you can apply width to both the element according to the need. Also margin, so that they do not touch each other.
+
+As all upcoming element will flow around the floated element, that's why the footer is in gutter between the aside and section. To get rid of this we can apply `clear: both` on footer. The `clear` property, we will cover soon in the next section.
+
+```
+  <header>..........</header>
+  <aside>.........</aside>
+  <section>.........</section>
+  <footer>............</footer>
+
+  header, aside, section {
+    padding: 30px;
+    margin: 0 1.5%;
+  }
+  aside {
+    float: left;
+    width: 30%;
+  }
+  section {
+    float: right;
+    width: 63%;
+  }
+  footer {
+    clear: both;
+  }
+```
+
+> #### Floats Changes the display property
+
+> When we float any element then it is removed from the normal flow of the page which also alters the default display property of the element.
+> A block elements may start covering the space according to the content it wraps.
+> To fix this behavior we can apply some fixed width according to the need.
+>
+> ```
+>  section {
+>    float: left;
+>    width: 600px;
+>  }
+>  aside {
+>   float: right;
+>    width: 300px;
+>  }
+> ```
+>
+> An inline-level element for example `<span>` ignores `height` and `width` property.
+> However, it may accept `height` and `width` if floated.
+>
+> ```
+>  span {
+>    float: left;
+>    width: 300px;
+>    height: 300px;
+>  }
+> ```

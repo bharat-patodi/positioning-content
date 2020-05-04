@@ -122,7 +122,7 @@ As all upcoming element will flow around the floated element, that's why the foo
 ```
 
 > #### Floats Changes the display property
-
+>
 > When we float any element then it is removed from the normal flow of the page which also alters the default display property of the element.
 > A block elements may start covering the space according to the content it wraps.
 > To fix this behavior we can apply some fixed width according to the need.

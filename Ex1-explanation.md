@@ -313,7 +313,6 @@ In this technique, we use CSS `overflow` property to the parent containing float
   <div class="parent">
     <aside>.........</aside>
     <section>.........</section>
-    <div class="clear"></div>
   </div>
 
   <footer>............</footer>
@@ -356,7 +355,6 @@ In this method, we define some sort rules in CSS to the parent element containin
   <div class="parent">
     <aside>.........</aside>
     <section>.........</section>
-    <div class="clear"></div>
   </div>
   <footer>............</footer>
 
@@ -408,7 +406,6 @@ This class name is also more modular. Just define clearfix rules once under `cle
   <div class="parent clearfix">
     <aside>.........</aside>
     <section>.........</section>
-    <div class="clear"></div>
   </div>
   <footer>............</footer>
 

@@ -25,7 +25,7 @@ Usually to create outline for any section or division we will be working with bl
   }
   section, aside {
     display: inline-block;
-    margin: 0 1.5%;
+    margin: 32px 1.5%;
   }
   aside {
     width: 30%;
@@ -136,7 +136,7 @@ As all upcoming element will flow around the floated element, that's why the foo
   }
 ```
 
-> #### Floats Changes the display property
+> #### Floats May Changes the Display Property
 >
 > When we float any element then it is removed from the normal flow of the page which also alters the default display property of the element.
 > A block elements may start covering the space according to the content it wraps.
@@ -163,3 +163,316 @@ As all upcoming element will flow around the floated element, that's why the foo
 >    height: 300px;
 >  }
 > ```
+
+#### Clearing and Containing the floats
+
+We have seen how the floats affect the normal flow of elements on a page. We saw how the rest of the elements bleed into the floated elements.
+
+Originally, the float was introduced to float an image and the rest of the content will automatically will flow around it. It was never intended to build layout or position content. But slowly it's use started to design complex layouts with multiple columns.
+
+To design layout with float, there are some pitfalls that we have already seen in above example. Sometimes you may find the proper styles are not rendering. To get rid of those pitfalls and bring back the content into the normal flow of the page we can clear or contain floats.
+
+##### Clearing the floats
+
+The `clear` property in CSS accept three different values, `left, right and both`.
+The `left` value will clear the left floats and `right` will clear right floats. `Both` value will clear both the right and left floats and it is more safer to apply.
+
+```
+  div {
+    clear: left;
+  }
+  div {
+    clear: right;
+  }
+  div {
+    clear: both;
+  }
+```
+
+The clear property must be applied to the element appeared after the floated element to return the element into normal flow of the page. As we have applied clear property to the `footer` in the above example.
+
+```
+  <!-- HTML -->
+  <header>..........</header>
+  <aside>.........</aside>
+  <section>.........</section>
+  <footer>............</footer>
+
+  <!-- CSS -->
+  header, aside, section, footer {
+    padding: 50px;
+    background: green;
+    box-sizing: border-box;
+  }
+  aside {
+    float: left;
+    width: 30%;
+    margin: 32px 1.5%;
+  }
+  section {
+    float: right;
+    width: 63%;
+    margin: 32px 1.5%;
+  }
+  footer {
+    clear: both;
+  }
+```
+
+#### Containing the floats
+
+However, clearing floats won't return each and everything back to normal. One of the most popular problems you may encounter with a parent containing floated elements. For example, let's wrap the floated element from above, inside a parent div and apply some background color it.
+
+```
+  <!-- HTML -->
+  <header>..........</header>
+  <div class="parent">
+    <aside>.........</aside>
+    <section>.........</section>
+  </div>
+
+  <footer>............</footer>
+
+  <!-- CSS -->
+  header, aside, section, footer {
+    padding: 50px;
+    background: green;
+    box-sizing: border-box;
+  }
+  .parent {
+    background-color: orange;
+  }
+  aside {
+    float: left;
+    width: 30%;
+    margin: 32px 1.5%;
+  }
+  section {
+    float: right;
+    width: 63%;
+    margin: 32px 1.5%;
+  }
+  footer {
+    clear: both;
+  }
+```
+
+If you checkout the result of the above code, you wont see background-color of the parent.
+Now inspect your element and checkout the `height` of the parent, it will be `0`. But the parent element must be having some height, because it is wrapping `section` and `aside`. So to bring back everything to the normal flow even the parent's styles, we contain the floats instead of clearing.
+
+To contain floats there are different approaches. The most popular are: placing an empty div with `clear: both` styles, overflow technique, Clearfix technique, etc.
+
+##### Placing an empty div.
+
+In this case, we place an empty `div` before the closing tag of the parent element and set its style to `clear: both`.
+
+```
+  <!-- HTML -->
+  <header>..........</header>
+  <div class="parent">
+    <aside>.........</aside>
+    <section>.........</section>
+    <div class="clear"></div>
+  </div>
+
+  <footer>............</footer>
+
+  <!-- CSS -->
+  header, aside, section, footer {
+    padding: 50px;
+    background: green;
+    box-sizing: border-box;
+  }
+  .parent {
+    background-color: orange;
+  }
+  aside {
+    float: left;
+    width: 30%;
+    margin: 32px 1.5%;
+  }
+  section {
+    float: right;
+    width: 63%;
+    margin: 32px 1.5%;
+  }
+  .clear {
+    clear: both;
+  }
+```
+
+Containing floats in this way is not semantically correct. On a page, we can have number of floated elements at numerous places. So we will have to place empty div as many times as we have used float on a page, which is contextually not correct.
+
+##### Overflow technique
+
+In this technique, we use CSS `overflow` property to the parent containing floated elements and set the value auto. Overflow property comes with a few different values, most popular are auto, hidden, scroll, etc.
+
+```
+  <!-- HTML -->
+  <header>..........</header>
+  <div class="parent">
+    <aside>.........</aside>
+    <section>.........</section>
+    <div class="clear"></div>
+  </div>
+
+  <footer>............</footer>
+
+  <!-- CSS -->
+  header, aside, section, footer {
+    padding: 50px;
+    background: green;
+    box-sizing: border-box;
+  }
+  .parent {
+    background-color: orange;
+    overflow: auto;
+  }
+  aside {
+    float: left;
+    width: 30%;
+    margin: 32px 1.5%;
+  }
+  section {
+    float: right;
+    width: 63%;
+    margin: 32px 1.5%;
+  }
+```
+
+The parent will gain back its height and all the styles applied to it. The overflow method also comes with few drawback. This to be worked in internet explorer 6 we will have to specify some fix height or width.
+
+Also, `overflow: auto` may add a scrollbar to the element in internet explorer on an Apple Computer. So instead we apply `overflow: hidden`. But the problem with hidden is that few styles like box-shadow may cut off outside the parent. It's just that different browsers treat overflow property differently.
+
+##### Cleafix Technique
+
+One of the most effective ways to contain floats is the clearfix method. The clearfix technique is more preferable and has advantages over other techniques.
+
+In this method, we define some sort rules in CSS to the parent element containing floated elements .
+
+```
+  <!-- HTML -->
+  <header>..........</header>
+  <div class="parent">
+    <aside>.........</aside>
+    <section>.........</section>
+    <div class="clear"></div>
+  </div>
+  <footer>............</footer>
+
+  <!-- CSS -->
+  header, aside, section, footer {
+    padding: 50px;
+    background: green;
+    box-sizing: border-box;
+  }
+  .parent {
+    background-color: orange;
+  }
+  aside {
+    float: left;
+    width: 30%;
+    margin: 32px 1.5%;
+  }
+  section {
+    float: right;
+    width: 63%;
+    margin: 32px 1.5%;
+  }
+  .parent:before, .parent:after {
+    content: "";
+    display: table;
+  }
+  .parent:after {
+    clear: both;
+  }
+```
+
+The above code might be a little bit confusing, few things are here which we are seeing for the first time. Actually, this method consists of `:before` and :`after` pseudo elements which is bringing back our page into normal flow.
+
+`:before` and `:after` pseudo elements creates dynamic content above and below the elemnt wherever we apply. Here, in this case, the content is empty but if we put anything inside the content(content: "pseudo") we can see the dynamic content will appear on our page. We will cover this topic(before and after) again in our `complex selector` chapter.
+
+The before and after pseudo element will create a hidden element above and below the parent class. We created a table-cell using `display: table` to the the pseudo elements. This is to make block-level element so that it should take full available width above and below the element. The `display: block` would also work fine, but `display: table` will ensure consistency for the older version of internet explorer
+
+The pseudo elements area now a block-level element. It will start from the left end and will go till the right end. This will work as a wall above and below the elements to prevent above and below margin from collapsing and will contain the floating affect inside the box.
+
+At the end to the `:after` pseudo-element, we also applied clear: both. This is to clear floats so that the next upcoming element does not get wrapped around the floated elements.
+
+This method is known as "clearfix", just because you may find these rules might be associated with the "clearfix" or "cf" class. The "clearfix" class is more popular so we call it clearfix method, you can take any class value.
+
+This class name is also more modular. Just define clearfix rules once under `clearfix` class in your CSS and use it on different parent elements containg floated elements. No nedd to define the rules for different parents again and again.
+
+```
+  <!-- HTML -->
+  <header>..........</header>
+  <div class="parent clearfix">
+    <aside>.........</aside>
+    <section>.........</section>
+    <div class="clear"></div>
+  </div>
+  <footer>............</footer>
+
+  <!-- CSS -->
+  header, aside, section, footer {
+    padding: 50px;
+    background: green;
+    box-sizing: border-box;
+  }
+  .parent {
+    background-color: orange;
+  }
+  aside {
+    float: left;
+    width: 30%;
+    margin: 32px 1.5%;
+  }
+  section {
+    float: right;
+    width: 63%;
+    margin: 32px 1.5%;
+  }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+  }
+  .clearfix:after {
+    clear: both;
+  }
+```
+
+This is how we generally work with "floats and clearfix". Now suppose we have three or more columns instead of two in a row. Then how should we take the approach?
+
+To position multi-columns in a row, we will `float: left` all the columns instead of floating one to the left another to right. Then according to the column size we can apply width to the floated elements.
+
+```
+  <!-- HTML -->
+  <header>......</header>
+  <section class="parent clearfix">
+    <div class="col">......</div>
+    <div class="col">......</div>
+    <div class="col">......</div>
+  </section>
+  <footer>.......</footer>
+
+  <!-- CSS -->
+  header, .parent, .col, footer {
+    bacground: #bada55;
+    padding: 50px;
+    box-sizing: border-box;
+  }
+  .parent {
+    margin: 32px 0;
+  }
+  .col {
+    float: left;
+    width: 30%;
+    margin: 0 1.5%;
+  }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+  }
+  .clearfix:after {
+    clear: both;
+  }
+```

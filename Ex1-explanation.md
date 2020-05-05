@@ -476,3 +476,29 @@ To position multi-columns in a row, we will `float: left` all the columns instea
     clear: both;
   }
 ```
+
+## BLOCK-writeTextAnswer
+
+1. What are the different ways to position the elements in a page?
+
+2. Which way will you prefer to position the elements in a row and why?
+
+3. What are different values does float property accepts?
+
+4. Float makes the element goes out of the flow, how can we fix the problem to get back into the normal flow?
+
+5. What are the disadvantages if we use clearing method to bring the element back to the normal flow?
+
+6. Explain overflow technique to contain floats as well disadvantages of it.
+
+7. Explain the clearfix method.
+
+## BLOCK-writeCode
+
+### Exercise 2
+
+1. Create a simple page having header, main content and a footer.
+
+2. Inside the header keep the brand name to the left and all the navigation to the right.
+
+3. Inside the main content crate three columns. In each column take one image and a paragraph below the image.

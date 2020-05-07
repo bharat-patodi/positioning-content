@@ -1,6 +1,6 @@
 ## BLOCK-writeCode
 
-1. Create a simple page having header, main content and a footer.
+1. Create a simple page having a header, main content, and a footer.
 
 2. Inside the header keep the logo to the left and all the navigation to the right.
 

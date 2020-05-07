@@ -191,3 +191,17 @@ The z-index property only works with `relative`,`absolute` and `fixed` elements.
 Here, the `box-3` is having the highest `z-index` value, therefore, it will be on top and `box-1` is having the lowest `z-index`value so it will be at the bottom.
 
 Usually you won't need `position` property to build layout. The layouts are made using other position properties like, `float, inline-block, flex or Grid`. But in certain cases when you need to uniquely position an element on a page, then only `position` property comes into play.
+
+## BLOCK-writeTextAnswer
+
+1. What are the different ways to uniquely position elements in a page?
+
+2. We have a static element, can we position that element with box offset properties?
+
+3. What are different offset properties and why do we use?
+
+4. Suppose we have a span element and we made its position fixed. Can we fix its width and height?
+
+5. What is z-index property in CSS? And how does it work?
+
+6. To which element we can apply z-index property?

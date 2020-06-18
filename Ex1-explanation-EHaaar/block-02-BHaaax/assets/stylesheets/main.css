@@ -49,7 +49,7 @@ body {
     background-color: #dddddd;
   }
 
-  h1 {
+h1 {
     font-size: 1.6em;
 }
 
@@ -74,6 +74,10 @@ Project Specific Styles
     padding-left: 5%;
 }
 
+.logo, nav {
+  vertical-align: middle;
+}
+
 main {
     width: 70%;
     margin: 0 auto;
@@ -92,6 +96,11 @@ nav {
 a {
     text-decoration: none;
     color: white;
+    padding-right: 10px;
+}
+
+li:last-child a {
+  padding-right: 0;
 }
 
 a:hover {
@@ -110,9 +119,6 @@ article {
 
 header {
     background-color: #3498db;
-}
-
-article {
 }
 
 footer {

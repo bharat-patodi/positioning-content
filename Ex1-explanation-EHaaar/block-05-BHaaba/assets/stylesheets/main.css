@@ -59,14 +59,18 @@ h2 {
 }
 
 a {
-    color: white;
     text-decoration: none;
+    color: white;
+    padding-right: 10px;
 }
 
 a:hover {
   color: #333;
 }
 
+li:last-child a {
+  padding-right: 0;
+}
 
 /* ---------------------------------------------------------------
 Header
@@ -91,6 +95,10 @@ nav {
     font-family: 'Space Mono', monospace;
     padding-left: 5%;
     width: 49%;
+}
+
+.logo, nav {
+  vertical-align: middle;
 }
 
 /* ---------------------------------------------------------------

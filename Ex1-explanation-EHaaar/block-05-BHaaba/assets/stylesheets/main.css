@@ -96,7 +96,7 @@ nav {
     padding-left: 5%;
     width: 49%;
 }
-
+/* Use universal selector for bb */
 .logo, nav {
   vertical-align: middle;
 }

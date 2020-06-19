@@ -50,15 +50,15 @@ My Base Styles
 }
 
 body {
+    background-color: #eee;
     font-size: 16px;
     line-height: 1.5;
-    background-color: #eee;
 }
 
 h1 {
   font-size: 3em;
-  text-align: center;
   font-weight: 500;
+  text-align: center;
 }
 
 h2 {
@@ -69,15 +69,28 @@ h2 {
 Project Specific Styles
 --------------------------------------------------------------- */
 
+img {
+    width: 100%;
+}
+
+nav a {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------------
+Modular Classes
+--------------------------------------------------------------- */
 .container {
-    width: 80%;
     margin: 0 auto;
+    width: 80%;
 }
 
 .wrapper {
     background-color: #fff;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .column {
@@ -86,25 +99,17 @@ Project Specific Styles
 }
 
 .column-2 {
-    width: 50%;
     padding: 2% 3%;
+    width: 50%;
 }
 
 .column-1, .column-3 {
-    padding-top: 5%;
+    padding-top: 7%;
 }
+
 .column-3 {
     font-size: 1.3em;
-}
-
-img {
-    width: 100%;
-}
-
-a {
-    font-family: 'Roboto', sans-serif;
-    text-decoration: none;
-    color: black;
+    padding-left: 2%;
 }
 
 .indent {
@@ -112,8 +117,8 @@ a {
 }
 
 .print-text {
-    padding-bottom: 5%;
     line-height: 1.2;
+    padding-bottom: 5%;
 }
 
 /* ---------------------------------------------------------------

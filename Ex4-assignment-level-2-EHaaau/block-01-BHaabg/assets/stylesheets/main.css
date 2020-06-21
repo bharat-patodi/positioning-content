@@ -39,99 +39,126 @@ table {
   border-spacing: 0;
 }
 
+/* This is a slightly adjusted version of the box-sizing reset for ensuring that components inside an explicitly declared content-box are also content-box'ed */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /* ---------------------------------------------------------------
 My Base Styles
 --------------------------------------------------------------- */
 
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-}
-
 body {
-    background-color: #eee;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    margin: 0 auto;
 }
 
 h1 {
-  font-size: 3em;
-  font-weight: 500;
-  text-align: center;
+    font-family: 'Aleo', serif;
+    font-size: 1.6em;
 }
 
 h2 {
-  font-size: 2.1em;
+    font-family: 'Aleo', serif;
+    font-size: 1.4em;
 }
 
 /* ---------------------------------------------------------------
 Project Specific Styles
 --------------------------------------------------------------- */
 
-img {
-    width: 100%;
+body {
+    background-color: #FF4136;
 }
 
-nav a {
-    color: black;
-    font-family: 'Roboto', sans-serif;
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    padding: 1%;
+}
+
+nav {
+    text-align: right;
+    min-width: 75%;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+/* This vertically aligns everything */
+header img, header nav {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a {
+    color: white;
     text-decoration: none;
 }
 
-/* ---------------------------------------------------------------
-Modular Classes
---------------------------------------------------------------- */
-.container {
-    margin: 0 auto;
-    width: 80%;
+a:hover {
+    border-bottom: 3px solid #c0392b;
+    color: black;
 }
 
-.wrapper {
-    background-color: #fff;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-bottom: 5%;
+nav li {
+    display: inline;
+    margin-left: 20px;
 }
 
-.column {
+nav li:first-child {
+    margin-left: 0;
+}
+
+h1 {
+    display: inline-block;
+}
+
+.col {
     float: left;
-    width: 25%;
+    margin: 5%;
 }
 
-.column-2 {
-    padding: 2% 3%;
-    width: 50%;
+.col-40 {
+    width: 40%;
 }
 
-.column-1, .column-3 {
-    padding-top: 7%;
+.center-x-axis {
+    text-align: center;
 }
 
-.column-3 {
-    font-size: 1.3em;
-    padding-left: 2%;
+.center-y-axis {
+    vertical-align: middle;
 }
 
-.indent {
-    margin-left: 10%;
+*::selection {
+    background: #3498db;
 }
 
-.print-text {
-    line-height: 1.2;
-    padding-bottom: 5%;
+footer {
+    text-align: center;
+    padding: 3%;
 }
 
 /* ---------------------------------------------------------------
-Clearfix
+Project Specific Styles
 --------------------------------------------------------------- */
 
-.cf:before,
-.cf:after {
+.clearfix:before,
+.clearfix:after {
   content: "";
   display: table;
 }
-.cf:after {
+.clearfix:after {
   clear: both;
 }
-

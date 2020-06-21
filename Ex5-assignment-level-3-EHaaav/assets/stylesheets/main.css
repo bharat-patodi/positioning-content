@@ -42,96 +42,138 @@ table {
 /* ---------------------------------------------------------------
 My Base Styles
 --------------------------------------------------------------- */
-
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-}
-
 body {
-    background-color: #eee;
-    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
     line-height: 1.5;
+    color: #aaa;
+  }
+
+h1, h2, h3, h4 {
+    font-family: 'Raleway', sans-serif;
 }
 
 h1 {
-  font-size: 3em;
-  font-weight: 500;
-  text-align: center;
+    font-size: 3.2em;
+    font-weight: 200;
 }
 
 h2 {
-  font-size: 2.1em;
+    font-size: 1.4em;
 }
 
-/* ---------------------------------------------------------------
-Project Specific Styles
---------------------------------------------------------------- */
-
-img {
-    width: 100%;
+h3 {
+    font-size: 1.2em;
 }
 
-nav a {
-    color: black;
-    font-family: 'Roboto', sans-serif;
+a {
     text-decoration: none;
+    color: white;
+    padding-right: 10px;
+}
+
+a:hover {
+  color: #333;
+}
+
+li:last-child a {
+  padding-right: 0;
 }
 
 /* ---------------------------------------------------------------
-Modular Classes
+Header
 --------------------------------------------------------------- */
-.container {
-    margin: 0 auto;
-    width: 80%;
+
+nav, nav li {
+    display: inline-block;
 }
 
-.wrapper {
-    background-color: #fff;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-bottom: 5%;
+nav {
+    text-align: right;
+    width: 50%;
 }
 
-.column {
+.logo {
+    display: inline-block;
+    width: 50%;
+}
+
+/* Use universal selector for bb */
+.logo, nav {
+    vertical-align: middle;
+}
+
+.intro {
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------
+Main
+--------------------------------------------------------------- */
+
+.row-blue {
+    background-color: #5385c1;
+    /* color: white; */
+}
+
+.row-blue h2, h3 {
+    color: white;
+}
+
+.row-blue p {
+
+}
+
+
+.row-white {
+    /* color: #5385c1; */
+}
+
+.row-white h2, h3 {
+    color: #5385c1;
+}
+
+.row-white {
+    /* color: #5385c1; */
+}
+
+.text-block {
+    float: left;
+    width: 33%;
+}
+
+.more-info-btn {
+    background-color: #5385c1;
+    color: white;
+}
+
+.team-member {
     float: left;
     width: 25%;
 }
 
-.column-2 {
-    padding: 2% 3%;
+.blog-post {
+    float: left;
     width: 50%;
 }
 
-.column-1, .column-3 {
-    padding-top: 7%;
-}
+/* ---------------------------------------------------------------
+Footer
+--------------------------------------------------------------- */
 
-.column-3 {
-    font-size: 1.3em;
-    padding-left: 2%;
-}
-
-.indent {
-    margin-left: 10%;
-}
-
-.print-text {
-    line-height: 1.2;
-    padding-bottom: 5%;
+footer {
+    background-color: #5385c1;
+    text-align: center;
 }
 
 /* ---------------------------------------------------------------
 Clearfix
 --------------------------------------------------------------- */
 
-.cf:before,
-.cf:after {
-  content: "";
-  display: table;
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
 }
-.cf:after {
-  clear: both;
+.clearfix:after {
+    clear: both;
 }
-

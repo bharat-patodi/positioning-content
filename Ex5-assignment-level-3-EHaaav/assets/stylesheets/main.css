@@ -12,7 +12,9 @@ body {
     font-size: 15px;
     line-height: 1.5;
     color: #aaa;
-  }
+    /* This has to be practiced. Not very intuitive right now */
+    /* padding: 0 30px; */
+}
 
 h1, h2, h3, h4 {
     font-family: 'Raleway', sans-serif;
@@ -24,7 +26,8 @@ h1 {
 }
 
 h2 {
-    font-size: 1.4em;
+    font-size: 2em;
+    font-weight: 300;
 }
 
 h3 {
@@ -45,6 +48,10 @@ li:last-child a {
   padding-right: 0;
 }
 
+.row-blue, .row-white, footer {
+    padding: 50px 100px;
+}
+
 /* ---------------------------------------------------------------
 Header
 --------------------------------------------------------------- */
@@ -56,11 +63,13 @@ nav, nav li {
 nav {
     text-align: right;
     width: 50%;
+    font-size: 0.9em;
 }
 
 .logo {
     display: inline-block;
     width: 50%;
+    color: white;
 }
 
 /* Use universal selector for bb */
@@ -70,27 +79,28 @@ nav {
 
 .intro {
     text-align: center;
+    padding-bottom: 100px;
 }
 
 /* ---------------------------------------------------------------
 Main
 --------------------------------------------------------------- */
 
-.container {
-    /* width: 80%; */
-}
-
 .row-blue {
     background-color: #5385c1;
-    /* color: white; */
-}
-
-.row-blue h2, h3 {
     color: white;
 }
 
-.row-blue p {
+/* This happened because of a weird issue. Check it later. */
+.row-blue h1, h2, .row-blue h3 {
+    color: white;
+}
 
+.sub-heading {
+    font-family: Raleway;
+    font-weight: 200;
+    font-size: 0.9em;
+    padding-top: 10px;
 }
 
 
@@ -108,23 +118,46 @@ Main
 
 .text-block {
     float: left;
-    width: 33%;
+    width: 25%;
+    margin: 0 4%;
+}
+
+.text-block h3, p {
+    margin-bottom: 20px;
 }
 
 .more-info-btn {
     background-color: #5385c1;
     color: white;
+    padding: 8px 16px;
+}
+
+.team, .blog {
+    text-align: center;
 }
 
 .team-member {
     float: left;
-    width: 25%;
+    width: 20%;
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+
+.team-member img {
+    border-radius: 50%;
 }
 
 .blog-post {
     float: left;
-    width: 50%;
+    max-width: 500px;
+    margin: calc((50% - 600px)/2);
+    text-align: left;
 }
+
+.blog-post-1 {
+    margin-right: 5%;
+}
+
 
 /* ---------------------------------------------------------------
 Footer

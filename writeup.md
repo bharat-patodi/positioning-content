@@ -1,0 +1,3 @@
+# Positioning Content
+
+Positioning content has always been one of the bigger issues in CSS. Learning it is the same. I have always known about these properties and have always not been in love with them. Until one fine morning, the CSS gods created flexbox and later on, CSS Grid. Things are so much easier with them. But to appreciate this, one has to go through the hell that is vertical positioning in the old CSS trickbooks. Not an easy sight it is, to see a dev struggle to fix a header in place only to have the lower code-blocks jump right up. It is hacky and not intuitive and I am glad to see the back of it.

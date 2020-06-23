@@ -39,6 +39,10 @@ h3 {
 Project Specific Styles
 --------------------------------------------------------------- */
 
+
+/* ---------------------------------------------------------------
+Header
+--------------------------------------------------------------- */
 header {
     padding: 25px 0;
     font-family: 'Roboto', sans-serif;
@@ -81,4 +85,45 @@ nav a {
 
 nav a:hover {
     opacity: 0.6;
+}
+
+/* ---------------------------------------------------------------
+Main
+--------------------------------------------------------------- */
+
+.hero {
+
+}
+
+.hero-section-01 {
+    width: 50%;
+    float: left;
+}
+
+.hero-section-02 {
+    width: 40%;
+}
+
+
+
+
+/* ---------------------------------------------------------------
+Main
+--------------------------------------------------------------- */
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  /*Should this line be included?*/
+  clear: both;
+  /*For IE 6/7 (trigger hasLayout) This is deprecated and not needed any more*/
+  *zoom: 1;
 }

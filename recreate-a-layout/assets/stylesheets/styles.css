@@ -1,0 +1,67 @@
+/* Remember to design Mobile First */
+/* LVHAF = link styling order */
+
+/* ---------------------------------------------------------------
+CSS Reset (minified)
+--------------------------------------------------------------- */
+
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{border:0;font:inherit;font-size:100%;margin:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* This is a slightly adjusted version of the box-sizing reset for ensuring that components inside an explicitly declared content-box are also content-box'ed */
+
+html{box-sizing:border-box}*,*:after,*:before{box-sizing:inherit}
+
+/* ---------------------------------------------------------------
+My Base Styles
+--------------------------------------------------------------- */
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 auto;
+  /* This gives us padding for mobile screens */
+  padding: 0 30px;
+}
+
+h1 {
+  font-size: 1.6em;
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+/* ---------------------------------------------------------------
+Project Specific Styles
+--------------------------------------------------------------- */
+
+header {
+
+}
+
+.logo, nav, nav li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo {
+    width: 45%;
+}
+
+nav {
+    width: 50%;
+    text-align: right;
+}
+
+nav li {
+    margin: 1%;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+

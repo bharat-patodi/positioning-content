@@ -40,7 +40,8 @@ Project Specific Styles
 --------------------------------------------------------------- */
 
 header {
-
+    padding: 25px 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .logo, nav, nav li {
@@ -49,7 +50,11 @@ header {
 }
 
 .logo {
-    width: 45%;
+    width: 50%;
+}
+
+.logo img {
+    width: 430px;
 }
 
 nav {
@@ -58,10 +63,22 @@ nav {
 }
 
 nav li {
-    margin: 1%;
+    margin-right: 5%;
 }
 
 nav li:last-child {
     margin-right: 0;
+    font-weight: 700;
 }
 
+nav a {
+    text-decoration: none;
+    color: black;
+    opacity: 1;
+    transition-delay: 0.3s;
+    transition-timing-function: ease-in; /* This is not working properly */
+}
+
+nav a:hover {
+    opacity: 0.6;
+}

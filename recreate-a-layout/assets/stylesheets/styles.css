@@ -17,6 +17,7 @@ My Base Styles
 
 body {
   font-size: 16px;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   margin: 0 auto;
   /* This gives us padding for mobile screens */
@@ -35,6 +36,10 @@ h3 {
   font-size: 1.2em;
 }
 
+::selection {
+  background-color: rgb(255, 255, 0);
+}
+
 /* ---------------------------------------------------------------
 Project Specific Styles
 --------------------------------------------------------------- */
@@ -48,7 +53,7 @@ header {
     font-family: 'Roboto', sans-serif;
 }
 
-.logo, nav, nav li {
+.logo, .header-nav, .header-nav li {
     display: inline-block;
     vertical-align: middle;
 }
@@ -61,21 +66,21 @@ header {
     width: 430px;
 }
 
-nav {
+.header-nav {
     width: 50%;
     text-align: right;
 }
 
-nav li {
+.header-nav li {
     margin-right: 5%;
 }
 
-nav li:last-child {
+.header-nav li:last-child {
     margin-right: 0;
     font-weight: 700;
 }
 
-nav a {
+.header-nav a {
     text-decoration: none;
     color: black;
     opacity: 1;
@@ -83,7 +88,7 @@ nav a {
     transition-timing-function: ease-in; /* This is not working properly */
 }
 
-nav a:hover {
+.header-nav a:hover {
     opacity: 0.6;
 }
 
@@ -104,11 +109,30 @@ Main
     width: 40%;
 }
 
+.main-nav-section {
+  font-family: Roboto;
+  font-size: .8em;
+}
+
+.main-nav {
+  float: left;
+  width: 20%;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: black;
+}
+
+/* ---------------------------------------------------------------
+Footer
+--------------------------------------------------------------- */
+
 
 
 
 /* ---------------------------------------------------------------
-Main
+Clearfix
 --------------------------------------------------------------- */
 
 .clearfix:before,
